@@ -13,6 +13,27 @@ menuButton.addEventListener('click', () => {
   menuButton.setAttribute('aria-expanded', String(open));
 });
 
+const gallery = document.querySelector('.gallery');
+const galleryToggle = document.querySelector('.gallery-toggle');
+
+galleryToggle.addEventListener('click', () => {
+  const expanded = gallery.classList.toggle('is-expanded');
+
+  if (expanded) {
+    gallery.querySelectorAll('[data-gallery-extra]').forEach((item) => {
+      const image = item.querySelector('img[data-src]');
+      if (image) image.src = image.dataset.src;
+      item.hidden = false;
+    });
+  } else {
+    gallery.querySelectorAll('[data-gallery-extra]').forEach((item) => {
+      item.hidden = true;
+    });
+  }
+
+  galleryToggle.setAttribute('aria-expanded', String(expanded));
+});
+
 document.querySelectorAll('.main-nav a').forEach((link) => {
   link.addEventListener('click', () => {
     menu.classList.remove('is-open');

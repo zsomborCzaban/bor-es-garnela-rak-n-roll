@@ -1,4 +1,4 @@
-# Bor és Garnéla Rák ’n’ Roll
+# Bor és Garnéla Rák n' Roll
 
 Magyar nyelvű, reszponzív egyoldalas éttermi bemutatkozó oldal.
 

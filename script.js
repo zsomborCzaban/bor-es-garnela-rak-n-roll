@@ -1,5 +1,12 @@
 const menuButton = document.querySelector('.menu-toggle');
 const menu = document.querySelector('.main-nav');
+const brandLink = document.querySelector('.brand');
+
+brandLink.addEventListener('click', (event) => {
+  event.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  history.replaceState(null, '', '#kezdolap');
+});
 
 menuButton.addEventListener('click', () => {
   const open = menu.classList.toggle('is-open');
